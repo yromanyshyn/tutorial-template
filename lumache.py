@@ -1,12 +1,18 @@
 """
 Lumache - Python library for cooks and food lovers.
 """
+import random
+
 
 __version__ = "0.1.0"
 
 
 class InvalidKindError(Exception):
     """Raised if the kind is invalid."""
+    pass
+
+class FooError(Exception):
+    """Raise this error whenever you want."""
     pass
 
 
@@ -21,3 +27,9 @@ def get_random_ingredients(kind=None):
     :rtype: list[str]
     """
     return ["shells", "gorgonzola", "parsley"]
+
+
+def foo(x):
+    if random.randint(0, 100) % 2 == 0:
+        raise FooError()
+    return "You passed!"
