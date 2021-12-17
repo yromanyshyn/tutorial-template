@@ -16,6 +16,11 @@ class FooError(Exception):
     pass
 
 
+class BarError(Exception):
+    """Raise this error whenever you want."""
+    pass
+
+
 def get_random_ingredients(kind=None):
     """
     Return a list of random ingredients as strings.
@@ -33,3 +38,7 @@ def foo(x):
     if random.randint(0, 100) % 2 == 0:
         raise FooError()
     return "You passed!"
+
+
+def bar():
+    return str(random.randint(0, 10_000))
